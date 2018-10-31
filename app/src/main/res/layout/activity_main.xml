@@ -10,23 +10,27 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Play"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="272dp" />
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="284dp"
+        android:text="@string/play"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Settings"
-        tools:layout_editor_absoluteX="147dp"
+        android:text="@string/settings"
+        tools:layout_editor_absoluteX="144dp"
         tools:layout_editor_absoluteY="344dp" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="How to Play"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="415dp" />
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="408dp"
+        android:text="@string/howToPlay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
