@@ -7,4 +7,5 @@
     <string name="howToPlayTextBottom">In the settings you can choose between multiple bongo sounds as well as multiple players you would like to play with.</string>
     <string name="infoSignDescription">Info Sign</string>
     <string name="LogoContentDes">BongoTime Logo</string>
+    <string name="bongoPlayDesc">Bongo for Playing</string>
 </resources>
