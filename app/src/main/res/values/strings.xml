@@ -3,5 +3,8 @@
     <string name="play">Play</string>
     <string name="settings">Settings</string>
     <string name="howToPlay">How To Play</string>
+    <string name="howToPlayText">This app uses the proximity sensor on your phone. This sensor detects when something (like your hand) hovers over your phone, it can detect that up to a couple centimeters. It is often located directly above your screen. This means you can use your hands to do a bongo beat while hitting the air above your phone.</string>
+    <string name="howToPlayTextBottom">In the settings you can choose between multiple bongo sounds as well as multiple players you would like to play with.</string>
+    <string name="infoSignDescription">Info Sign</string>
     <string name="LogoContentDes">BongoTime Logo</string>
 </resources>
