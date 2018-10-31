@@ -20,9 +20,11 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="348dp"
         android:text="@string/settings"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="344dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button3"
