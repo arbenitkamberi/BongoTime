@@ -7,12 +7,12 @@
     tools:context=".Settings">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/settingsBongoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Sounds:"
+        android:text="@string/settingsBongoText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,68 +25,71 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButton8"
+            android:id="@+id/bongoOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RadioButton" />
+            android:text="@string/bongoOne" />
 
         <RadioButton
-            android:id="@+id/radioButton9"
+            android:id="@+id/bongoTwo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RadioButton" />
+            android:text="@string/bongoTwo" />
 
         <RadioButton
-            android:id="@+id/radioButton10"
+            android:id="@+id/bongoThree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RadioButton" />
+            android:text="@string/bongoThree" />
 
         <RadioButton
-            android:id="@+id/radioButton11"
+            android:id="@+id/bongoFour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RadioButton" />
+            android:text="@string/bongoFour" />
 
         <RadioButton
-            android:id="@+id/radioButton12"
+            android:id="@+id/bongoRandom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RadioButton" />
+            android:text="@string/bongoRandom" />
     </RadioGroup>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/settingsPlayerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="244dp"
-        android:text="Player:"
+        android:layout_marginTop="246dp"
+        android:text="@string/settingsPlayerText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/buttonDK"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="281dp"
+        android:contentDescription="@string/buttonDKDesc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars[0]" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/buttonBongo"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="281dp"
+        android:contentDescription="@string/buttonBongoDesc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars[0]" />
+
 </android.support.constraint.ConstraintLayout>
