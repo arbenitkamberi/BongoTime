@@ -13,13 +13,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    protected void play(View v){
+    public void play(View v){
         Intent intent = new Intent(this, Play.class);
         startActivity(intent);
     }
 
     public void settings(View v){
         Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
+    }
+
+    public void howToPlay(View v){
+        Intent intent = new Intent(this, HowToPlay.class);
         startActivity(intent);
     }
 }
