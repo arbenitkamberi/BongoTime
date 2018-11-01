@@ -13,7 +13,6 @@ import android.util.Log;
 import com.ubs.bongotime.db.DbManager;
 import com.ubs.bongotime.model.Settings;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
