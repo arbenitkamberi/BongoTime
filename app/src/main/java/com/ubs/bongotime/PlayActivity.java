@@ -31,8 +31,9 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
     private List<MediaPlayer> bongoTwo;
     private List<MediaPlayer> bongoThree;
     private List<MediaPlayer> bongoFour;
-    private int bongoCounter = 0;
 
+    private int bongoCounter = 0;
+    private static final int NUMBER_OF_BONGO_PLAYERS = 6;
     //SETTINGS INITIALISATION
     private Settings settings;
 
@@ -44,17 +45,10 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mProximity = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
 
-        bongoOne = Arrays.asList(MediaPlayer.create(this, R.raw.bongo1), MediaPlayer.create(this, R.raw.bongo1), MediaPlayer.create(this, R.raw.bongo1),
-                MediaPlayer.create(this, R.raw.bongo1), MediaPlayer.create(this, R.raw.bongo1), MediaPlayer.create(this, R.raw.bongo1));
-
-        bongoTwo = Arrays.asList(MediaPlayer.create(this, R.raw.bongo2), MediaPlayer.create(this, R.raw.bongo2), MediaPlayer.create(this, R.raw.bongo2),
-                MediaPlayer.create(this, R.raw.bongo2), MediaPlayer.create(this, R.raw.bongo2), MediaPlayer.create(this, R.raw.bongo2));
-
-        bongoThree = Arrays.asList(MediaPlayer.create(this, R.raw.bongo3), MediaPlayer.create(this, R.raw.bongo3), MediaPlayer.create(this, R.raw.bongo3),
-                MediaPlayer.create(this, R.raw.bongo3), MediaPlayer.create(this, R.raw.bongo3), MediaPlayer.create(this, R.raw.bongo3));
-
-        bongoFour = Arrays.asList(MediaPlayer.create(this, R.raw.bongo4), MediaPlayer.create(this, R.raw.bongo4), MediaPlayer.create(this, R.raw.bongo4),
-                MediaPlayer.create(this, R.raw.bongo4), MediaPlayer.create(this, R.raw.bongo4), MediaPlayer.create(this, R.raw.bongo4));
+        bongoOne = createListOfMediaplayers(R.raw.bongo1);
+        bongoTwo = createListOfMediaplayers(R.raw.bongo2);
+        bongoThree = createListOfMediaplayers(R.raw.bongo3);
+        bongoFour = createListOfMediaplayers(R.raw.bongo4);
 
         DbManager.insertDefaultData();
         settings = Settings.listAll(Settings.class).get(0);
@@ -103,5 +97,19 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy){
 
+    }
+
+    /**
+     * One MediaPlayer can only play a .mp3 one at a time, to enable faster bongo-playing a list of multiple MediaPlayers is used
+     *
+     * @param resourceId id of the .mp3
+     * @return List of MediaPlayers playing the specified .mp3, list-size same as NUMBER_OF_BONGO_PLAYERS
+     */
+    private List<MediaPlayer> createListOfMediaplayers(int resourceId){
+        MediaPlayer[] mediaPlayers = new MediaPlayer[NUMBER_OF_BONGO_PLAYERS];
+        for(int i = 0; i < mediaPlayers.length; i++){
+            mediaPlayers[i] = MediaPlayer.create(this, resourceId);
+        }
+        return Arrays.asList(mediaPlayers);
     }
 }
