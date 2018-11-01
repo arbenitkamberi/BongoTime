@@ -23,6 +23,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         DbManager.insertDefaultData();
 
+        //Set the previously selected sound
         Settings settings = Settings.listAll(Settings.class).get(0);
         radioGroup.check(getIdBySoundname(settings.getSelectedSound()));
 
