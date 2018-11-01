@@ -29,14 +29,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         dbManager.open();
-        Log.d(LOG_TAG, "Die Datenquelle wurde geöffnet.");
+        Log.d(LOG_TAG, "Database was opened");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         dbManager.close();
-        Log.d(LOG_TAG, "Die Datenquelle wurde geschlossen.");
+        Log.d(LOG_TAG, "Database was closed");
     }
 
     public void play(View v){
