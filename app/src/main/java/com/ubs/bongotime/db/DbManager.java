@@ -35,20 +35,22 @@ public class DbManager {
     public static void insertDefaultData(){
         List<Settings> settingsList = Settings.listAll(Settings.class);
         if(settingsList.size() == 0){
-            Settings settingsNew = new Settings(1, "Bongo", "Bongo1");
+            Settings settingsNew = new Settings("Bongo", "Bongo1");
             Settings.save(settingsNew);
 
-            Settings settings = Settings.listAll(Settings.class).get(0);
-            SettingsOfRandom bongo1 = new SettingsOfRandom(1,"Bongo1", false);
-            SettingsOfRandom bongo2 = new SettingsOfRandom(2,"Bongo2", false);
-            SettingsOfRandom bongo3 = new SettingsOfRandom(3,"Bongo3", false);
-            SettingsOfRandom bongo4 = new SettingsOfRandom(4,"Bongo4", false);
-
+            SettingsOfRandom bongo1 = new SettingsOfRandom("Bongo1", false);
+            SettingsOfRandom bongo2 = new SettingsOfRandom("Bongo2", false);
+            SettingsOfRandom bongo3 = new SettingsOfRandom("Bongo3", false);
+            SettingsOfRandom bongo4 = new SettingsOfRandom("Bongo4", false);
             SettingsOfRandom.save(bongo1);
             SettingsOfRandom.save(bongo2);
             SettingsOfRandom.save(bongo3);
             SettingsOfRandom.save(bongo4);
 
+            Log.d(LOG_TAG, "Default Settings saved in database");
+        }
+        else {
+            Log.d(LOG_TAG, "Already settings in database");
         }
     }
 }

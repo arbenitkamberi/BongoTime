@@ -4,17 +4,30 @@ import com.orm.SugarRecord;
 
 public class SettingsOfRandom extends SugarRecord {
 
-    public int id;
-    public String soundName;
-    public boolean isSelected;
+    private String soundName;
+    private boolean isSelected;
 
     public SettingsOfRandom(){
-
     }
 
-    public SettingsOfRandom(int id, String soundName, boolean isSelected){
-        this.id = id;
+    public SettingsOfRandom(String soundName, boolean isSelected){
         this.soundName = soundName;
         this.isSelected = isSelected;
+    }
+
+    public String getSoundName() {
+        return soundName;
+    }
+
+    public void setSoundName(String soundName) {
+        this.soundName = soundName;
+    }
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
     }
 }

@@ -5,16 +5,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.ubs.bongotime.model.Settings;
-import com.ubs.bongotime.model.SettingsOfRandom;
-
-import java.util.List;
-
 public class DbHelper extends SQLiteOpenHelper {
 
     private static final String LOG_TAG = "DBACCESS";
 
-    public static final String DB_NAME = "BongoTest11.db";
+    public static final String DB_NAME = "BongoTest12.db";
     public static final int DB_VERSION = 1;
 
     //Table Settings
