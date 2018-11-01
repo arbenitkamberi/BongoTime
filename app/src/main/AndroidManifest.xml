@@ -23,7 +23,7 @@
         <activity android:name=".Play" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".HowToPlay"/>
-        <meta-data android:name="DATABASE" android:value="BongoTest5.db" />
+        <meta-data android:name="DATABASE" android:value="BongoTest11.db" />
         <meta-data android:name="VERSION" android:value="1" />
         <meta-data android:name="QUERY_LOG" android:value="true" />
         <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.ubs" />
