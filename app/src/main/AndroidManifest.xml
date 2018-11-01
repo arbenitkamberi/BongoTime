@@ -20,9 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Play" />
+        <activity android:name=".PlayActivity" />
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".HowToPlay"/>
+        <activity android:name=".HowToPlayActivity"/>
         <meta-data android:name="DATABASE" android:value="BongoTest12.db" />
         <meta-data android:name="VERSION" android:value="1" />
         <meta-data android:name="QUERY_LOG" android:value="true" />

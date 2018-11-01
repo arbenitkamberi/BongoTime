@@ -2,6 +2,9 @@ package com.ubs.bongotime.model;
 
 import com.orm.SugarRecord;
 
+/**
+ * Model-class for table SETTINGS
+ */
 public class Settings extends SugarRecord {
 
     private String selectedPlayer;

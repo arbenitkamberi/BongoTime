@@ -2,6 +2,9 @@ package com.ubs.bongotime.model;
 
 import com.orm.SugarRecord;
 
+/**
+ * Model-class for table SETTINGS_OF_RANDOM
+ */
 public class SettingsOfRandom extends SugarRecord {
 
     private String soundName;

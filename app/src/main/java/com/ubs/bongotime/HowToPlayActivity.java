@@ -3,7 +3,7 @@ package com.ubs.bongotime;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class HowToPlay extends AppCompatActivity {
+public class HowToPlayActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

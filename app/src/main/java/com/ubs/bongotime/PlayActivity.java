@@ -9,7 +9,7 @@ import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Play extends AppCompatActivity implements SensorEventListener {
+public class PlayActivity extends AppCompatActivity implements SensorEventListener {
 
     private SensorManager mSensorManager;
     private Sensor mProximity;

@@ -21,6 +21,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String SQL_CREATE_SETTINGS = "CREATE TABLE SETTINGS ( `ID` INTEGER, `SELECTED_PLAYER` TEXT, `SELECTED_SOUND` TEXT, PRIMARY KEY(`ID`) );";
 
 
+
     //Table SettingsOfRandom
     public static final String TABLE_SETTINGS_OF_RANDOM = "SettingsOfRandom";
     public static final String COLUMN_ID_OF_RANDOM = "id";
@@ -32,25 +33,25 @@ public class DbHelper extends SQLiteOpenHelper {
 
     public DbHelper(Context context){
         super(context, DB_NAME, null, DB_VERSION);
-        Log.d(LOG_TAG, "DbHelper hat die Datenbank: " + getDatabaseName() + " erzeugt");
+        Log.d(LOG_TAG, "DbHelper created the database " + getDatabaseName());
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         try {
             db.execSQL(SQL_CREATE_SETTINGS);
-            Log.d(LOG_TAG, "Die Tabelle SETTINGS wird mit SQL-Befehl: " + SQL_CREATE_SETTINGS + " angelegt.");
+            Log.d(LOG_TAG, "Table SETTINGS was created with sql-query: " + SQL_CREATE_SETTINGS);
 
             db.execSQL(SQL_CREATE_SETTINGS_OF_RANDOM);
-            Log.d(LOG_TAG, "Die Tabelle SETTINGS_OF_RANDOM wird mit SQL-Befehl: " + SQL_CREATE_SETTINGS + " angelegt.");
+            Log.d(LOG_TAG, "Table SETTINGS_OF_RANDOM was created with sql-query: " + SQL_CREATE_SETTINGS);
         }
         catch (Exception ex) {
-            Log.e(LOG_TAG, "Fehler beim Anlegen der Tabelle: " + ex.getMessage());
+            Log.e(LOG_TAG, "Error creating table: " + ex.getMessage());
         }
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        Log.e(LOG_TAG, "onUpgrade wurde aufgerufen" );
+        Log.e(LOG_TAG, "onUpgrade was called" );
     }
 }
