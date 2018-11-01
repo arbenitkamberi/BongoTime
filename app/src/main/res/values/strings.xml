@@ -3,14 +3,14 @@
     <string name="app_name">BongoTime</string>
 
     <!-- DESCRIPTIONS -->
-    <string name="LogoContentDes">BongoTime Logo</string>
+    <string name="logoContentDesc">BongoTime Logo</string>
     <string name="bongoPlayDesc">Bongo for Playing</string>
-    <string name="infoSignDescription">Info Sign</string>
+    <string name="infoSignDesc">Info Sign</string>
     <string name="buttonDKDesc">Choose Donkey Kong</string>
     <string name="buttonBongoDesc">Choose Bongo</string>
 
     <!-- IN-APP TEXT -->
-    <string name="howToPlayText">This app uses the proximity sensor on your phone. This sensor detects when something (like your hand) hovers over your phone, it can detect that up to a couple centimeters. It is often located directly above your screen. This means you can use your hands to do a bongo beat while hitting the air above your phone.</string>
+    <string name="howToPlayTextTop">This app uses the proximity sensor on your phone. This sensor detects when something (like your hand) hovers over your phone, it can detect that up to a couple centimeters. It is often located directly above your screen. This means you can use your hands to do a bongo beat while hitting the air above your phone.</string>
     <string name="howToPlayTextBottom">In the settings you can choose between multiple bongo sounds as well as multiple players you would like to play with.</string>
     <string name="settingsBongoText">Sounds:</string>
     <string name="settingsPlayerText">Player:</string>
