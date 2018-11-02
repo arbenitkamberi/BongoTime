@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#4caf50"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_dia"
+        android:layout_width="305dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="Select sounds"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+
+    <CheckBox
+        android:id="@+id/checkBongo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bongo1"
+        android:textColor="@android:color/white" />
+
+    <CheckBox
+        android:id="@+id/checkBongo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bongo2"
+        android:textColor="@android:color/white" />
+
+    <CheckBox
+        android:id="@+id/checkBongo3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bongo3"
+        android:textColor="@android:color/white" />
+
+    <CheckBox
+        android:id="@+id/checkBongo4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bongo4"
+        android:textColor="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="382dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#4caf50"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#4caf50"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="" />
+
+        <Button
+            android:id="@+id/btn_cacncel"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="#4caf50"
+            android:clickable="true"
+            android:onClick="cancel"
+            android:text="Cancel"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_save"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:background="#4caf50"
+            android:clickable="true"
+            android:onClick="save"
+            android:text="Save"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#4caf50"
+            android:text="" />
+    </LinearLayout>
+
+</LinearLayout>

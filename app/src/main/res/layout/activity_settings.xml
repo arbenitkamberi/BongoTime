@@ -100,4 +100,15 @@
         tools:srcCompat="@tools:sample/avatars[0]"
         android:background="@drawable/imagebutton_brown_border"/>
 
+    <ImageView
+        android:id="@+id/openSettingsOfRandom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="173dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="settingsOfRandom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_settings_black_24dp" />
+
 </android.support.constraint.ConstraintLayout>

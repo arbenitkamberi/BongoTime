@@ -1,16 +1,16 @@
 package com.ubs.bongotime;
 
-import android.graphics.drawable.Drawable;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RadioGroup;
 
 import com.ubs.bongotime.db.DbManager;
 import com.ubs.bongotime.model.Settings;
+import com.ubs.bongotime.model.SettingsOfRandom;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -90,6 +90,11 @@ public class SettingsActivity extends AppCompatActivity {
                 settings.save();
             }
         });
+    }
+
+    public void settingsOfRandom(View v){
+        SettingsOfRandomActivity settingsOfRandomActivity = new SettingsOfRandomActivity(this);
+        settingsOfRandomActivity.show();
     }
 
 
