@@ -16,6 +16,7 @@
     <string name="howToPlayTextBottom">In the settings you can choose between multiple bongo sounds as well as multiple players you would like to play with.</string>
     <string name="settingsBongoText">Sounds:</string>
     <string name="settingsPlayerText">Player:</string>
+    <string name="playInstructions">Hover your hand over your phone!</string>
 
     <!-- BUTTON-TEXT -->
     <string name="play">Play</string>

@@ -33,4 +33,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bongo" />
 
+    <TextView
+        android:id="@+id/playInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/playInstructions"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bongoPlay"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
