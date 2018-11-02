@@ -15,9 +15,9 @@ import java.util.List;
 public class SettingsOfRandomActivity extends Dialog implements android.view.View.OnClickListener {
 
     private Activity activity;
-    private Dialog d;
-    //private Button save, cancel;
+    private Button save, cancel;
     private CheckBox bongo1, bongo2, bongo3, bongo4;
+    private List<SettingsOfRandom> settingsOfRandom;
 
     public SettingsOfRandomActivity(Activity a) {
         super(a);
@@ -29,45 +29,59 @@ public class SettingsOfRandomActivity extends Dialog implements android.view.Vie
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_settings_of_random);
-        //save = (Button) findViewById(R.id.btn_save);
-        //cancel = (Button) findViewById(R.id.btn_cacncel);
-        //save.setOnClickListener(this);
-        //cancel.setOnClickListener(this);
+
+        save = (Button) findViewById(R.id.btn_save);
+        cancel = (Button) findViewById(R.id.btn_cancel);
+        save.setOnClickListener(this);
+        cancel.setOnClickListener(this);
         bongo1 = (CheckBox) findViewById(R.id.checkBongo1);
         bongo2 = (CheckBox) findViewById(R.id.checkBongo2);
         bongo3 = (CheckBox) findViewById(R.id.checkBongo3);
         bongo4 = (CheckBox) findViewById(R.id.checkBongo4);
 
-        List<SettingsOfRandom> settingsOfRandom = SettingsOfRandom.listAll(SettingsOfRandom.class);
+        settingsOfRandom = SettingsOfRandom.listAll(SettingsOfRandom.class);
         for(SettingsOfRandom setting : settingsOfRandom){
-            switch (setting.getSoundName()){
-
+            if(setting.isSelected()) {
+                switch (setting.getSoundName()) {
+                    case "Bongo1":
+                        bongo1.setChecked(true);
+                        break;
+                    case "Bongo2":
+                        bongo2.setChecked(true);
+                        break;
+                    case "Bongo3":
+                        bongo3.setChecked(true);
+                        break;
+                    case "Bongo4":
+                        bongo4.setChecked(true);
+                        break;
+                }
             }
         }
     }
 
-
-    public void save(View view){
-        activity.finish();
-        dismiss();
-    }
-
-    public void cancel(View view){
-        dismiss();
-    }
-
     @Override
     public void onClick(View view) {
-        /*switch(view.getId()){
-            case R.id.btn_yes:
-                activity.finish();
-                break;
-            case R.id.btn_no:
-                dismiss();
-                break;
-            default:
-                break;
+        if(view.getId() == R.id.btn_save){
+            for(SettingsOfRandom setting : settingsOfRandom){
+                switch (setting.getSoundName()){
+                    case "Bongo1":
+                        setting.setSelected(bongo1.isChecked());
+                        break;
+                    case "Bongo2":
+                        setting.setSelected(bongo2.isChecked());
+                        break;
+                    case "Bongo3":
+                        setting.setSelected(bongo3.isChecked());
+                        break;
+                    case "Bongo4":
+                        setting.setSelected(bongo4.isChecked());
+                        break;
+                }
+                setting.save();
+            }
         }
-        dismiss();*/
+
+        dismiss();
     }
 }
