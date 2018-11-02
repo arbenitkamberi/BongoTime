@@ -67,6 +67,7 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
 
         if(settings.getSelectedPlayer().equals("Bongo")) {
             DKPlayLeft.setVisibility(View.INVISIBLE);
+            DKPlayRight.setVisibility(View.INVISIBLE);
             bongoPlay.setVisibility(View.VISIBLE);
             bongoIsChosen = true;
         } else if(settings.getSelectedPlayer().equals("DK")) {
