@@ -1,6 +1,5 @@
 package com.ubs.bongotime;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +9,6 @@ import android.widget.RadioGroup;
 
 import com.ubs.bongotime.db.DbManager;
 import com.ubs.bongotime.model.Settings;
-import com.ubs.bongotime.model.SettingsOfRandom;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -71,6 +69,7 @@ public class SettingsActivity extends AppCompatActivity {
             playerBongo.setBackground(null);
         }
 
+        //OnClickListeners for selecting players
         playerBongo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
                 playerBongo.setBackground(getDrawable(R.drawable.imagebutton_brown_border));
@@ -80,7 +79,6 @@ public class SettingsActivity extends AppCompatActivity {
                 settings.save();
             }
         });
-
         playerDK.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
                 playerDK.setBackground(getDrawable(R.drawable.imagebutton_brown_border));

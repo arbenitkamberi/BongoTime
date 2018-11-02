@@ -36,12 +36,14 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
     private List<MediaPlayer> bongoFour;
     private List<List<MediaPlayer>> bongos; //List containing bongoOne to bongoFour
 
+    //BONGOCOUNTER used to not always use same mediaplayer on same bongo-sound
     private int bongoCounter = 0;
     private static final int NUMBER_OF_BONGO_PLAYERS = 9;
 
     //SETTINGS INITIALISATION
     private Settings settings;
 
+    //COMPONENTS
     private ImageView bongoPlay;
     private ImageView DKPlayLeft;
     private ImageView DKPlayRight;
@@ -81,6 +83,7 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
             bongoIsChosen = false;
         }
 
+        //User selected "Random", adding his selected sounds to list "bongos"
         if(settings.getSelectedSound().equals("Random")) {
             List<SettingsOfRandom> settingsOfRandom = SettingsOfRandom.listAll(SettingsOfRandom.class);
             for (SettingsOfRandom setting : settingsOfRandom) {
@@ -134,17 +137,19 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
                 } else if(settings.getSelectedSound().equals("Bongo4")){
                     bongoFour.get(bongoCounter).start();
                 } else if(settings.getSelectedSound().equals("Random")){
+                    //Play a random sound of ones in list "bongos"
                     int max = bongos.size() - 1;
                     int min = 0;
                     int random = (int)(Math.random() * ((max - min) + 1)) + min;
                     bongos.get(random).get(bongoCounter).start();
                 }
 
-                if(bongoIsChosen == false){
+                if(bongoIsChosen == false){ //User selected Donkey Kong in settings
                     DKPlayLeft.setVisibility(DKPlayLeft.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
                     DKPlayRight.setVisibility(DKPlayRight.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
                 }
 
+                //update bongoCounter
                 bongoCounter++;
                 if(bongoCounter > 5){
                     bongoCounter = 0;

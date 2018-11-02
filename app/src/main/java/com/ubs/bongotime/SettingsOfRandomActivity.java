@@ -62,7 +62,7 @@ public class SettingsOfRandomActivity extends Dialog implements android.view.Vie
 
     @Override
     public void onClick(View view) {
-        if(view.getId() == R.id.btn_save){
+        if(view.getId() == R.id.btn_save){ //User pressed "save"
             for(SettingsOfRandom setting : settingsOfRandom){
                 switch (setting.getSoundName()){
                     case "Bongo1":
