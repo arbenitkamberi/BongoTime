@@ -79,9 +79,12 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="281dp"
         android:contentDescription="@string/buttonDKDesc"
+        android:scaleType="fitCenter"
+        android:src="@drawable/dk_left"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars[0]" />
+        tools:srcCompat="@tools:sample/avatars[0]"
+        android:background="@drawable/imagebutton_brown_border"/>
 
     <ImageButton
         android:id="@+id/buttonBongo"
@@ -90,8 +93,11 @@
         android:layout_marginStart="70dp"
         android:layout_marginTop="281dp"
         android:contentDescription="@string/buttonBongoDesc"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bongo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars[0]" />
+        tools:srcCompat="@tools:sample/avatars[0]"
+        android:background="@drawable/imagebutton_brown_border"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -8,6 +8,8 @@
     <string name="infoSignDesc">Info Sign</string>
     <string name="buttonDKDesc">Choose Donkey Kong</string>
     <string name="buttonBongoDesc">Choose Bongo</string>
+    <string name="DKPlayLeftDesc">Left DK for Playing</string>
+    <string name="DKPlayRightDesc">Right DK for Playing</string>
 
     <!-- IN-APP TEXT -->
     <string name="howToPlayTextTop">This app uses the proximity sensor on your phone. This sensor detects when something (like your hand) hovers over your phone, it can detect that up to a couple centimeters. It is often located directly above your screen. This means you can use your hands to do a bongo beat while hitting the air above your phone.</string>

@@ -7,6 +7,24 @@
     tools:context=".PlayActivity">
 
     <ImageView
+        android:id="@+id/DKPlay_Left"
+        android:layout_width="382dp"
+        android:layout_height="508dp"
+        android:contentDescription="@string/DKPlayLeftDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bongoPlay"
+        app:srcCompat="@drawable/dk_left" />
+
+    <ImageView
+        android:id="@+id/DKPlay_Right"
+        android:layout_width="396dp"
+        android:layout_height="519dp"
+        android:contentDescription="@string/DKPlayRightDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/DKPlay_Left"
+        app:srcCompat="@drawable/dk_right" />
+
+    <ImageView
         android:id="@+id/bongoPlay"
         android:layout_width="wrap_content"
         android:layout_height="519dp"
@@ -14,4 +32,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bongo" />
+
 </android.support.constraint.ConstraintLayout>

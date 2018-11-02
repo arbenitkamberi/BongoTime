@@ -1,8 +1,12 @@
 package com.ubs.bongotime;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RadioGroup;
 
 import com.ubs.bongotime.db.DbManager;
@@ -11,6 +15,8 @@ import com.ubs.bongotime.model.Settings;
 public class SettingsActivity extends AppCompatActivity {
 
     private RadioGroup radioGroup;
+    private ImageButton playerBongo;
+    private ImageButton playerDK;
 
     private static final String LOG_TAG = "SettingsActivity";
 
@@ -20,6 +26,8 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         radioGroup = (RadioGroup) findViewById(R.id.bongoGroup);
+        playerBongo = (ImageButton) findViewById(R.id.buttonBongo);
+        playerDK = (ImageButton) findViewById(R.id.buttonDK);
 
         DbManager.insertDefaultData();
 
@@ -54,7 +62,36 @@ public class SettingsActivity extends AppCompatActivity {
                 Log.d(LOG_TAG, "Bongo sound changed from " + oldSound + " to " + settings.getSelectedSound());
             }
         });
+
+        if(settings.getSelectedPlayer().equals("Bongo")){
+            playerBongo.setBackground(getDrawable(R.drawable.imagebutton_brown_border));
+            playerDK.setBackground(null);
+        } else if(settings.getSelectedPlayer().equals("DK")){
+            playerDK.setBackground(getDrawable(R.drawable.imagebutton_brown_border));
+            playerBongo.setBackground(null);
+        }
+
+        playerBongo.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                playerBongo.setBackground(getDrawable(R.drawable.imagebutton_brown_border));
+                playerDK.setBackground(null);
+                Settings settings = Settings.listAll(Settings.class).get(0);
+                settings.setSelectedPlayer("Bongo");
+                settings.save();
+            }
+        });
+
+        playerDK.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                playerDK.setBackground(getDrawable(R.drawable.imagebutton_brown_border));
+                playerBongo.setBackground(null);
+                Settings settings = Settings.listAll(Settings.class).get(0);
+                settings.setSelectedPlayer("DK");
+                settings.save();
+            }
+        });
     }
+
 
     private int getIdBySoundname(String soundName){
         switch (soundName){

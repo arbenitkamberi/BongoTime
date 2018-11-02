@@ -9,6 +9,8 @@ import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.ubs.bongotime.db.DbManager;
 import com.ubs.bongotime.model.Settings;
@@ -33,8 +35,15 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
 
     private int bongoCounter = 0;
     private static final int NUMBER_OF_BONGO_PLAYERS = 6;
+
     //SETTINGS INITIALISATION
     private Settings settings;
+
+    private ImageView bongoPlay;
+    private ImageView DKPlayLeft;
+    private ImageView DKPlayRight;
+
+    private boolean bongoIsChosen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +60,21 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
 
         DbManager.insertDefaultData();
         settings = Settings.listAll(Settings.class).get(0);
+
+        bongoPlay  = findViewById(R.id.bongoPlay);
+        DKPlayLeft = findViewById(R.id.DKPlay_Left);
+        DKPlayRight = findViewById(R.id.DKPlay_Right);
+
+        if(settings.getSelectedPlayer().equals("Bongo")) {
+            DKPlayLeft.setVisibility(View.INVISIBLE);
+            bongoPlay.setVisibility(View.VISIBLE);
+            bongoIsChosen = true;
+        } else if(settings.getSelectedPlayer().equals("DK")) {
+            bongoPlay.setVisibility(View.INVISIBLE);
+            DKPlayLeft.setVisibility(View.VISIBLE);
+            DKPlayRight.setVisibility(View.INVISIBLE);
+            bongoIsChosen = false;
+        }
     }
 
     @Override
@@ -74,7 +98,6 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
                 //near
                 System.out.println("near");
 
-
                 if(settings.getSelectedSound().equals("Bongo1")){
                     bongoOne.get(bongoCounter).start();
                 } else if(settings.getSelectedSound().equals("Bongo2")){
@@ -83,6 +106,11 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
                     bongoThree.get(bongoCounter).start();
                 } else if(settings.getSelectedSound().equals("Bongo4")){
                     bongoFour.get(bongoCounter).start();
+                }
+
+                if(bongoIsChosen == false){
+                    DKPlayLeft.setVisibility(DKPlayLeft.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
+                    DKPlayRight.setVisibility(DKPlayRight.getVisibility() == View.VISIBLE ? View.INVISIBLE : View.VISIBLE);
                 }
 
                 bongoCounter++;
