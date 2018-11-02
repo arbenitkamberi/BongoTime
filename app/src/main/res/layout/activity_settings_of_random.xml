@@ -11,9 +11,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:text="Select sounds"
+        android:text="@string/randomSelectSounds"
         android:textColor="@android:color/white"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textStyle="bold" />
 
 
@@ -21,28 +21,28 @@
         android:id="@+id/checkBongo1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bongo1"
+        android:text="@string/bongoOne"
         android:textColor="@android:color/white" />
 
     <CheckBox
         android:id="@+id/checkBongo2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bongo2"
+        android:text="@string/bongoTwo"
         android:textColor="@android:color/white" />
 
     <CheckBox
         android:id="@+id/checkBongo3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bongo3"
+        android:text="@string/bongoThree"
         android:textColor="@android:color/white" />
 
     <CheckBox
         android:id="@+id/checkBongo4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bongo4"
+        android:text="@string/bongoFour"
         android:textColor="@android:color/white" />
 
     <LinearLayout
@@ -82,7 +82,7 @@
             android:background="#4caf50"
             android:clickable="true"
             android:onClick="cancel"
-            android:text="Cancel"
+            android:text="@string/randomCancel"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
@@ -91,11 +91,11 @@
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="100dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:background="#4caf50"
             android:clickable="true"
             android:onClick="save"
-            android:text="Save"
+            android:text="@string/randomSave"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 

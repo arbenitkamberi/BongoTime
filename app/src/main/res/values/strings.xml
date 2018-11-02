@@ -10,6 +10,7 @@
     <string name="buttonBongoDesc">Choose Bongo</string>
     <string name="DKPlayLeftDesc">Left DK for Playing</string>
     <string name="DKPlayRightDesc">Right DK for Playing</string>
+    <string name="openSettingsOfRandom">Click to open settings of random</string>
 
     <!-- IN-APP TEXT -->
     <string name="howToPlayTextTop">This app uses the proximity sensor on your phone. This sensor detects when something (like your hand) hovers over your phone, it can detect that up to a couple centimeters. It is often located directly above your screen. This means you can use your hands to do a bongo beat while hitting the air above your phone.</string>
@@ -17,6 +18,9 @@
     <string name="settingsBongoText">Sounds:</string>
     <string name="settingsPlayerText">Player:</string>
     <string name="playInstructions">Hover your hand over your phone!</string>
+    <string name="randomSelectSounds">Select sounds</string>
+    <string name="randomCancel">Cancel</string>
+    <string name="randomSave">Save</string>
 
     <!-- BUTTON-TEXT -->
     <string name="play">Play</string>

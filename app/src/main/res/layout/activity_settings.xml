@@ -106,6 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="173dp"
         android:layout_marginEnd="20dp"
+        android:contentDescription="@string/openSettingsOfRandom"
         android:onClick="settingsOfRandom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

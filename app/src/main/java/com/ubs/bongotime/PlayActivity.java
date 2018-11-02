@@ -14,7 +14,9 @@ import android.widget.ImageView;
 
 import com.ubs.bongotime.db.DbManager;
 import com.ubs.bongotime.model.Settings;
+import com.ubs.bongotime.model.SettingsOfRandom;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -32,9 +34,10 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
     private List<MediaPlayer> bongoTwo;
     private List<MediaPlayer> bongoThree;
     private List<MediaPlayer> bongoFour;
+    private List<List<MediaPlayer>> bongos; //List containing bongoOne to bongoFour
 
     private int bongoCounter = 0;
-    private static final int NUMBER_OF_BONGO_PLAYERS = 6;
+    private static final int NUMBER_OF_BONGO_PLAYERS = 9;
 
     //SETTINGS INITIALISATION
     private Settings settings;
@@ -57,6 +60,7 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
         bongoTwo = createListOfMediaplayers(R.raw.bongo2);
         bongoThree = createListOfMediaplayers(R.raw.bongo3);
         bongoFour = createListOfMediaplayers(R.raw.bongo4);
+        bongos = new ArrayList<List<MediaPlayer>>();
 
         DbManager.insertDefaultData();
         settings = Settings.listAll(Settings.class).get(0);
@@ -75,6 +79,28 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
             DKPlayLeft.setVisibility(View.VISIBLE);
             DKPlayRight.setVisibility(View.INVISIBLE);
             bongoIsChosen = false;
+        }
+
+        if(settings.getSelectedSound().equals("Random")) {
+            List<SettingsOfRandom> settingsOfRandom = SettingsOfRandom.listAll(SettingsOfRandom.class);
+            for (SettingsOfRandom setting : settingsOfRandom) {
+                if (setting.isSelected()) {
+                    switch (setting.getSoundName()) {
+                        case "Bongo1":
+                            bongos.add(bongoOne);
+                            break;
+                        case "Bongo2":
+                            bongos.add(bongoTwo);
+                            break;
+                        case "Bongo3":
+                            bongos.add(bongoThree);
+                            break;
+                        case "Bongo4":
+                            bongos.add(bongoFour);
+                            break;
+                    }
+                }
+            }
         }
     }
 
@@ -107,6 +133,11 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
                     bongoThree.get(bongoCounter).start();
                 } else if(settings.getSelectedSound().equals("Bongo4")){
                     bongoFour.get(bongoCounter).start();
+                } else if(settings.getSelectedSound().equals("Random")){
+                    int max = bongos.size() - 1;
+                    int min = 0;
+                    int random = (int)(Math.random() * ((max - min) + 1)) + min;
+                    bongos.get(random).get(bongoCounter).start();
                 }
 
                 if(bongoIsChosen == false){
