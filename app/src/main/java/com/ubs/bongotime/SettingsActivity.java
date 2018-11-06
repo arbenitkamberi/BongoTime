@@ -15,6 +15,7 @@ public class SettingsActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private ImageButton playerBongo;
     private ImageButton playerDK;
+    private ImageButton playerCat;
 
     private static final String LOG_TAG = "SettingsActivity";
 
@@ -26,6 +27,7 @@ public class SettingsActivity extends AppCompatActivity {
         radioGroup = (RadioGroup) findViewById(R.id.bongoGroup);
         playerBongo = (ImageButton) findViewById(R.id.buttonBongo);
         playerDK = (ImageButton) findViewById(R.id.buttonDK);
+        playerCat = (ImageButton) findViewById(R.id.buttonCat);
 
         DbManager.insertDefaultData();
 
@@ -61,12 +63,19 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+        //BORDER FOR BUTTONS WHEN YOU OPEN SETTINGS
         if(settings.getSelectedPlayer().equals("Bongo")){
             playerBongo.setBackground(getDrawable(R.drawable.imagebutton_brown_border));
             playerDK.setBackground(null);
+            playerCat.setBackground(null);
         } else if(settings.getSelectedPlayer().equals("DK")){
             playerDK.setBackground(getDrawable(R.drawable.imagebutton_brown_border));
             playerBongo.setBackground(null);
+            playerCat.setBackground(null);
+        } else if(settings.getSelectedPlayer().equals("Cat")) {
+            playerCat.setBackground(getDrawable(R.drawable.imagebutton_brown_border));
+            playerBongo.setBackground(null);
+            playerDK.setBackground(null);
         }
 
         //OnClickListeners for selecting players
@@ -74,6 +83,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v){
                 playerBongo.setBackground(getDrawable(R.drawable.imagebutton_brown_border));
                 playerDK.setBackground(null);
+                playerCat.setBackground(null);
                 Settings settings = Settings.listAll(Settings.class).get(0);
                 settings.setSelectedPlayer("Bongo");
                 settings.save();
@@ -83,8 +93,19 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v){
                 playerDK.setBackground(getDrawable(R.drawable.imagebutton_brown_border));
                 playerBongo.setBackground(null);
+                playerCat.setBackground(null);
                 Settings settings = Settings.listAll(Settings.class).get(0);
                 settings.setSelectedPlayer("DK");
+                settings.save();
+            }
+        });
+        playerCat.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                playerCat.setBackground(getDrawable(R.drawable.imagebutton_brown_border));
+                playerDK.setBackground(null);
+                playerBongo.setBackground(null);
+                Settings settings = Settings.listAll(Settings.class).get(0);
+                settings.setSelectedPlayer("Cat");
                 settings.save();
             }
         });

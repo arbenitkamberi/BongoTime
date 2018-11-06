@@ -100,6 +100,18 @@
         tools:srcCompat="@tools:sample/avatars[0]"
         android:background="@drawable/imagebutton_brown_border"/>
 
+    <ImageButton
+        android:id="@+id/buttonCat"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="281dp"
+        android:background="@drawable/imagebutton_brown_border"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bongo_cat_up"
+        app:layout_constraintStart_toEndOf="@+id/buttonBongo"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars[0]" />
+
     <ImageView
         android:id="@+id/openSettingsOfRandom"
         android:layout_width="wrap_content"
