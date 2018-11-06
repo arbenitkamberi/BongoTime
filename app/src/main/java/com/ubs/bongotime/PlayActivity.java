@@ -28,12 +28,12 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
 
     private static final String LOG_TAG = "PlayActivity";
 
-    //PROXIMITY-SENSOR INITIALISATION
+    //PROXIMITY-SENSOR DECLARATION
     private SensorManager mSensorManager;
     private Sensor mProximity;
     private static final int SENSOR_SENSITIVITY = 4;
 
-    //MEDIAPLAYER INITIALISATION
+    //MEDIAPLAYER DECLARATION
     private List<MediaPlayer> bongoOne;
     private List<MediaPlayer> bongoTwo;
     private List<MediaPlayer> bongoThree;
@@ -44,16 +44,17 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
     private int bongoCounter = 0;
     private static final int NUMBER_OF_BONGO_PLAYERS = 9;
 
-    //SETTINGS INITIALISATION
+    //SETTINGS DECLARATION
     private Settings settings;
 
-    //COMPONENTS
+    //COMPONENTS DECLARATION
     private ImageView bongoPlay;
     private ImageView DKPlayLeft;
     private ImageView DKPlayRight;
     private ImageView catUp;
     private ImageView catDown;
 
+    //TIMER DECLARATION (FOR BONGO CAT)
     private Timer timer;
     private Handler handler;
 
@@ -65,6 +66,7 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
 
+        //INITIALISATIONS OF COMPONENTS
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mProximity = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
 
@@ -95,6 +97,7 @@ public class PlayActivity extends AppCompatActivity implements SensorEventListen
             }
         });
 
+        //CHECK WHICH PLAYER WAS CHOSEN
         if(settings.getSelectedPlayer().equals("Bongo")) {
             DKPlayLeft.setVisibility(View.INVISIBLE);
             DKPlayRight.setVisibility(View.INVISIBLE);
